@@ -37,6 +37,7 @@ class GameScene: SKScene {
         guard let camera = camera else { return }
         let cameraWidth = self.size.width
         let cameraHeight = self.size.height
+        print("cameraWidth = \(cameraWidth), cameraHeight = \(cameraHeight)")
         
         let buttonSize = CGSize(width: 100, height: 100)
         
@@ -49,7 +50,20 @@ class GameScene: SKScene {
         downButton.zPosition = buttonZPosition
         downButton.position = CGPoint(x: upButton.position.x - buttonSize.width * 1.5,
                                       y: upButton.position.y)
+        
+        let leftButton = SKSpriteNode(color: .black, size: buttonSize)
+        leftButton.zPosition = buttonZPosition
+        leftButton.position = CGPoint(x: (cameraWidth / 2) * -1 + buttonSize.width,
+                                      y: upButton.position.y)
+        
+        let rightButton = SKSpriteNode(color: .blue, size: buttonSize)
+        rightButton.zPosition = buttonZPosition
+        rightButton.position = CGPoint(x: leftButton.position.x + buttonSize.width * 1.5,
+                                       y: upButton.position.y)
+        
         camera.addChild(upButton)
         camera.addChild(downButton)
+        camera.addChild(leftButton)
+        camera.addChild(rightButton)
     }
 }
