@@ -9,10 +9,8 @@
 import SpriteKit
 import GameplayKit
 
-private let buttonZPosition: CGFloat = 150
+class GameScene: SKScene, ButtonDelegate {
 
-class GameScene: SKScene {
-    
     var player = Player()
     
     override func didMove(to view: SKView) {
@@ -37,33 +35,44 @@ class GameScene: SKScene {
         guard let camera = camera else { return }
         let cameraWidth = self.size.width
         let cameraHeight = self.size.height
-        print("cameraWidth = \(cameraWidth), cameraHeight = \(cameraHeight)")
-        
-        let buttonSize = CGSize(width: 100, height: 100)
-        
-        let upButton = SKSpriteNode(color: .green, size: buttonSize)
-        upButton.zPosition = buttonZPosition
+
+        let upButton = Button(title: "upButton", texture: nil, color: .green)
         upButton.position = CGPoint(x: cameraWidth / 2 - upButton.size.width,
                                     y: (cameraHeight / 2) * -1 + upButton.size.height)
-        
-        let downButton = SKSpriteNode(color: .red, size: buttonSize)
-        downButton.zPosition = buttonZPosition
-        downButton.position = CGPoint(x: upButton.position.x - buttonSize.width * 1.5,
+
+        let downButton = Button(title: "downButton", texture: nil, color: .red)
+        downButton.position = CGPoint(x: upButton.position.x - downButton.size.width * 1.5,
                                       y: upButton.position.y)
-        
-        let leftButton = SKSpriteNode(color: .black, size: buttonSize)
-        leftButton.zPosition = buttonZPosition
-        leftButton.position = CGPoint(x: (cameraWidth / 2) * -1 + buttonSize.width,
+
+        let leftButton = Button(title: "leftButton", texture: nil, color: .blue)
+        leftButton.position = CGPoint(x: (cameraWidth / 2) * -1 + leftButton.size.width,
                                       y: upButton.position.y)
-        
-        let rightButton = SKSpriteNode(color: .blue, size: buttonSize)
-        rightButton.zPosition = buttonZPosition
-        rightButton.position = CGPoint(x: leftButton.position.x + buttonSize.width * 1.5,
+
+        let rightButton = Button(title: "rightButton", texture: nil, color: .blue)
+        rightButton.position = CGPoint(x: leftButton.position.x + rightButton.size.width * 1.5,
                                        y: upButton.position.y)
+        
+        upButton.delegate = self
+        downButton.delegate = self
+        leftButton.delegate = self
+        rightButton.delegate = self
         
         camera.addChild(upButton)
         camera.addChild(downButton)
         camera.addChild(leftButton)
         camera.addChild(rightButton)
+    }
+    
+    // MARK: ButtonDelegate
+    func buttonDidPress(sender: Button) {
+        if let buttonName = sender.name {
+            print("\(buttonName) DidPress")
+        }
+    }
+    
+    func buttonStopPress(sender: Button) {
+        if let buttonName = sender.name {
+            print("\(buttonName) StopPress")
+        }
     }
 }
