@@ -10,6 +10,9 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, ButtonDelegate {
+    
+    var lastUpdateTime: TimeInterval = 0
+    var deltaTime: TimeInterval = 0
 
     var player = Player()
     
@@ -20,7 +23,12 @@ class GameScene: SKScene, ButtonDelegate {
     }
 
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        if lastUpdateTime > 0 {
+            deltaTime = currentTime - lastUpdateTime
+        } else {
+            deltaTime = 0 }
+        lastUpdateTime = currentTime
+        print("\(deltaTime * 1000) milliseconds since last update")
     }
     
     func setupCamera() {
