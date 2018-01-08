@@ -25,6 +25,7 @@ class GameViewController: UIViewController {
                 view.presentScene(scene)
             }
             
+            // Additional optimization to improve rendering performance.
             view.ignoresSiblingOrder = true
             view.showsFPS = true
             view.showsNodeCount = true

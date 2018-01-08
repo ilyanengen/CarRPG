@@ -66,13 +66,37 @@ class GameScene: SKScene, ButtonDelegate {
     // MARK: ButtonDelegate
     func buttonDidPress(sender: Button) {
         if let buttonName = sender.name {
-            print("\(buttonName) DidPress")
+            switch buttonName {
+            case "upButton":
+                print("upButton pressed")
+            case "downButton":
+                print("downButton pressed")
+            case "leftButton":
+                print("leftButton pressed")
+                player.zRotation = player.zRotation + .pi / 8
+            case "rightButton":
+                print("rightButton pressed")
+                player.zRotation = player.zRotation - .pi / 8
+            default:
+                print("button pressed - default case")
+            }
         }
     }
     
     func buttonStopPress(sender: Button) {
         if let buttonName = sender.name {
-            print("\(buttonName) StopPress")
+            switch buttonName {
+            case "upButton":
+                print("upButton stopped")
+            case "downButton":
+                print("downButton stopped")
+            case "leftButton":
+                print("leftButton stopped")
+            case "rightButton":
+                print("rightButton stopped")
+            default:
+                print("button stopped - default case")
+            }
         }
     }
 }
