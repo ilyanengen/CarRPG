@@ -33,10 +33,20 @@ class Player: SKSpriteNode {
 //        physicsBody?.allowsRotation = false
     }
     
-    func move(target: CGPoint) {
-//        guard let physicsBody = physicsBody else { return }
-//        let newVelocity = (target - position).normalized()
-//            * PlayerSettings.playerSpeed
-//        physicsBody.velocity = CGVector(point: newVelocity)
+    func move(velocity: CGPoint, delta: TimeInterval) {
+        let amountToMove = CGPoint(x: velocity.x * CGFloat(delta),
+                                   y: velocity.y * CGFloat(delta))
+        position = CGPoint(x: position.x + amountToMove.x,
+                           y: position.y + amountToMove.y)
     }
+//    func move(target: CGPoint) {
+//        guard let physicsBody = physicsBody else { return }
+//        let newVelocity = ( target - position).normalized() * PlayerSettings.playerSpeed
+//        physicsBody.velocity = CGVector(point: newVelocity)
+//    }
+
+    //    func rotate(sprite: SKSpriteNode, direction: CGPoint) {
+    //        sprite.zRotation = CGFloat(
+    //            atan2(Double(direction.y), Double(direction.x)))
+    //    }
 }

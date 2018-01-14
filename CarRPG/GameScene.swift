@@ -12,9 +12,10 @@ import GameplayKit
 class GameScene: SKScene, ButtonDelegate {
     
     var lastUpdateTime: TimeInterval = 0
-    var deltaTime: TimeInterval = 0
-
+    let playerMovePointsPerSecond: CGFloat = 100.0
     var player = Player()
+    
+    var isUpButtonTapped: Bool = false
     
     override func didMove(to view: SKView) {
         addChild(player)
@@ -23,12 +24,14 @@ class GameScene: SKScene, ButtonDelegate {
     }
 
     override func update(_ currentTime: TimeInterval) {
-        if lastUpdateTime > 0 {
-            deltaTime = currentTime - lastUpdateTime
-        } else {
-            deltaTime = 0 }
+        let deltaTime: TimeInterval
+        deltaTime = lastUpdateTime > 0 ? currentTime - lastUpdateTime : 0
         lastUpdateTime = currentTime
-        print("\(deltaTime * 1000) milliseconds since last update")
+        print(player.zRotation.radiansToDegrees())
+        
+        if isUpButtonTapped == true {
+            player.move(velocity: CGPoint(x: playerMovePointsPerSecond, y: 0), delta: deltaTime)
+        }
     }
     
     func setupCamera() {
@@ -77,6 +80,7 @@ class GameScene: SKScene, ButtonDelegate {
             switch buttonName {
             case "upButton":
                 print("upButton pressed")
+                isUpButtonTapped = true
             case "downButton":
                 print("downButton pressed")
             case "leftButton":
@@ -96,6 +100,7 @@ class GameScene: SKScene, ButtonDelegate {
             switch buttonName {
             case "upButton":
                 print("upButton stopped")
+                isUpButtonTapped = false
             case "downButton":
                 print("downButton stopped")
             case "leftButton":

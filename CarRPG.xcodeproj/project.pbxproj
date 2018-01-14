@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A61746EE1FC1D62300C0F402 /* TileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = A61746ED1FC1D62300C0F402 /* TileSet.sks */; };
 		A61746F21FC1F27500C0F402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A61746F11FC1F27500C0F402 /* LaunchScreen.storyboard */; };
+		A6841D99200C104700CDCF9D /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6841D98200C104700CDCF9D /* CGFloat+Extension.swift */; };
 		A6AD1E821FA641CB00A55EB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AD1E811FA641CB00A55EB4 /* AppDelegate.swift */; };
 		A6AD1E841FA641CB00A55EB4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A6AD1E831FA641CB00A55EB4 /* GameScene.sks */; };
 		A6AD1E861FA641CB00A55EB4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = A6AD1E851FA641CB00A55EB4 /* Actions.sks */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		A61746ED1FC1D62300C0F402 /* TileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TileSet.sks; sourceTree = "<group>"; };
 		A61746F11FC1F27500C0F402 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6841D98200C104700CDCF9D /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		A6AD1E7E1FA641CB00A55EB4 /* CarRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6AD1E811FA641CB00A55EB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6AD1E831FA641CB00A55EB4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				A6F61B91200175F1005FA683 /* Button.swift */,
 				A6AD1E891FA641CB00A55EB4 /* GameViewController.swift */,
 				A6AD1E811FA641CB00A55EB4 /* AppDelegate.swift */,
+				A6841D98200C104700CDCF9D /* CGFloat+Extension.swift */,
 				A6AD1E8B1FA641CB00A55EB4 /* Main.storyboard */,
 				A61746F11FC1F27500C0F402 /* LaunchScreen.storyboard */,
 				A6AD1E8E1FA641CB00A55EB4 /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 			files = (
 				A6F61B92200175F1005FA683 /* Button.swift in Sources */,
 				A6D3BFCD1FFE799F0001ED0D /* Player.swift in Sources */,
+				A6841D99200C104700CDCF9D /* CGFloat+Extension.swift in Sources */,
 				A6AD1E881FA641CB00A55EB4 /* GameScene.swift in Sources */,
 				A6AD1E8A1FA641CB00A55EB4 /* GameViewController.swift in Sources */,
 				A6AD1E821FA641CB00A55EB4 /* AppDelegate.swift in Sources */,
