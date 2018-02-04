@@ -25,12 +25,14 @@ class Player: SKSpriteNode {
                    size: CGSize(width: 32, height: 32))
         name = "Player"
         zPosition = 50
-    
-//        physicsBody = SKPhysicsBody(circleOfRadius: size.width/2)
-//        physicsBody?.restitution = 1.0
-//        physicsBody?.linearDamping = 0.5
-//        physicsBody?.friction = 0
-//        physicsBody?.allowsRotation = false
+
+        /*
+        physicsBody = SKPhysicsBody(circleOfRadius: size.width/2)
+        physicsBody?.restitution = 1.0
+        physicsBody?.linearDamping = 0.5
+        physicsBody?.friction = 0
+        physicsBody?.allowsRotation = false
+        */
     }
     
     func move(velocity: CGPoint, delta: TimeInterval) {
