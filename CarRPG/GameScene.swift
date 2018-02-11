@@ -10,12 +10,8 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, ButtonDelegate {
-    
-    var lastUpdateTime: TimeInterval = 0
-    let playerMovePointsPerSecond: CGFloat = 100.0
-    var player = Player()
-    
-    var isUpButtonTapped: Bool = false
+    private var player = Player()
+    private var isUpButtonTapped: Bool = false
     
     override func didMove(to view: SKView) {
         addChild(player)
@@ -24,13 +20,9 @@ class GameScene: SKScene, ButtonDelegate {
     }
 
     override func update(_ currentTime: TimeInterval) {
-        let deltaTime: TimeInterval
-        deltaTime = lastUpdateTime > 0 ? currentTime - lastUpdateTime : 0
-        lastUpdateTime = currentTime
-        print(player.zRotation.radiansToDegrees())
-        
+        // Player is going while upButton is pressed.
         if isUpButtonTapped == true {
-            player.move(velocity: CGPoint(x: playerMovePointsPerSecond, y: 0), delta: deltaTime)
+            player.physicsBody?.velocity = CGVector(length: PlayerSettings.speed, angle: player.zRotation)
         }
     }
     

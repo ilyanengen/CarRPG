@@ -49,6 +49,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2447D920308B0F00576E4D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A6F61B91200175F1005FA683 /* Button.swift */,
+				A6841D98200C104700CDCF9D /* CGFloat+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0D2447DA20308B4700576E4D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6AD1E831FA641CB00A55EB4 /* GameScene.sks */,
+				A6AD1E851FA641CB00A55EB4 /* Actions.sks */,
+				A61746ED1FC1D62300C0F402 /* TileSet.sks */,
+				A6AD1E8B1FA641CB00A55EB4 /* Main.storyboard */,
+				A61746F11FC1F27500C0F402 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A6AD1E751FA641CB00A55EB4 = {
 			isa = PBXGroup;
 			children = (
@@ -68,17 +89,12 @@
 		A6AD1E801FA641CB00A55EB4 /* CarRPG */ = {
 			isa = PBXGroup;
 			children = (
-				A6AD1E831FA641CB00A55EB4 /* GameScene.sks */,
-				A6AD1E851FA641CB00A55EB4 /* Actions.sks */,
-				A61746ED1FC1D62300C0F402 /* TileSet.sks */,
+				0D2447DA20308B4700576E4D /* Resources */,
 				A6D3BFCB1FFE79790001ED0D /* Characters */,
+				0D2447D920308B0F00576E4D /* Utils */,
 				A6AD1E871FA641CB00A55EB4 /* GameScene.swift */,
-				A6F61B91200175F1005FA683 /* Button.swift */,
 				A6AD1E891FA641CB00A55EB4 /* GameViewController.swift */,
 				A6AD1E811FA641CB00A55EB4 /* AppDelegate.swift */,
-				A6841D98200C104700CDCF9D /* CGFloat+Extension.swift */,
-				A6AD1E8B1FA641CB00A55EB4 /* Main.storyboard */,
-				A61746F11FC1F27500C0F402 /* LaunchScreen.storyboard */,
 				A6AD1E8E1FA641CB00A55EB4 /* Assets.xcassets */,
 				A6AD1E931FA641CB00A55EB4 /* Info.plist */,
 			);

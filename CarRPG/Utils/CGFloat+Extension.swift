@@ -26,3 +26,10 @@ public extension CGFloat {
         return self * 180.0 / π
     }
 }
+
+public extension CGVector {
+    init(length: CGFloat, angle: CGFloat) {
+        self.dx = length * cos(angle)
+        self.dy = length * sin(angle)
+    }
+}
