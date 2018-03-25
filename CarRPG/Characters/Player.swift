@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 public enum PlayerSettings {
-    static let size: CGSize = CGSize(width: 32, height: 32)
+    static let size: CGSize = CGSize(width: 64, height: 32)
     static let zPosition: CGFloat = 50
     static let pointsToMovePerSecond: CGFloat = 200
     static let kRotateLeftAction = "rotateLeftAction"
